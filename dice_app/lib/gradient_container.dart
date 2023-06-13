@@ -1,3 +1,4 @@
+import 'package:dice_app/dice_roller.dart';
 import 'package:flutter/material.dart';
 
 //import 'package:dice_app/Style_text.dart';
@@ -14,8 +15,7 @@ class GradientContainer extends StatelessWidget {
 
   final Color firstColor;
   final Color secondColor;
-
-  rollDice() {}
+  
 
   @override
   Widget build(context) {
@@ -27,37 +27,8 @@ class GradientContainer extends StatelessWidget {
           end: endAlignment,
         ),
       ),
-      child: Center(
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            Image.asset(
-              'assets/dice/dice-2.png',
-              width: 200,
-            ),
-            const SizedBox(height: 30),
-            // Button that has a backgroundcolor and slitly shadow.
-            /* ElevatedButton(onPressed: onPressed, child: child)  */
-
-            // Button that hasn't not backgroundcolor but has border.
-            /* OutlinedButton(onPressed: onPressed, child: child) */
-
-            // Button that dispaly some pressable text
-            TextButton(
-              onPressed: rollDice,
-              style: TextButton.styleFrom(
-               /*  padding: const EdgeInsets.only(
-                  top: 30,
-                ), */
-                foregroundColor: Colors.white,
-                textStyle: const TextStyle(
-                  fontSize: 18.0,
-                ),
-              ),
-              child: const Text('Roll the Dice!'),
-            )
-          ],
-        ),
+      child: const Center(
+        child: DiceRoller(),
       ),
     );
   }
